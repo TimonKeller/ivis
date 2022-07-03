@@ -12,6 +12,6 @@ In one of our classes at the FHNW, it was our task to develop a data visualizati
 
 --- 
 
-License& copyright
+# License& copyright
 
 © Timon Keller
