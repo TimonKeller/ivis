@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fullpage.js/dist/fullpage.css" />
+     <title>Championsleague_D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script> 
+    <script src='fullpage.js/dist/fullpage.js'></script>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section slide"  id="home">
+            <header>
+                <section class="bannerTop">
+                    <img src="img/UCL.svg" alt="" class="banner">
+                </section>
+                <button class="scroll-button">
+                    <a href="#Distribution">   
+                        <img  class="scroll-icon" src="./img/scroll.png" alt="">
+                    </a>
+                </button>
+            </header>
+        </div>
+        <div class="section content slide" id="Distribution">
+            <section class="history" id="history">
+                <div class="historyContent">
+                    <div class="historyLeft">
+                        <h1 class="historyTitle">Since 1981</h1>
+                        <p class="historyText">
+                            The Champions League trophy is probably the most prestigious trophy you can win in club football. Where it has been won since 1981 can be seen in the map-diagram on the right side. The legend down bellow describes the circle and the meaning of the color.        
+                        </p>
+                        <div class="legend">
+                            <div class="legendOne">
+                                <svg height="20" width="20" class="legendBullet">
+                                    <circle cx="10" cy="10" r="5" fill="#781984" />
+                                </svg>
+                                <p class="legendText">
+                                    1-2 titles
+                                </p>
+                            </div>
+                            <div class="legendOne">
+                                <svg height="20" width="20" class="legendBullet">
+                                    <circle cx="10" cy="10" r="5" fill="#0268FA" />
+                                </svg>
+                                <p class="legendText">
+                                    3-4 titles
+                                </p>
+                            </div>
+                            <div class="legendOne">
+                                <svg height="20" width="20" class="legendBullet">
+                                    <circle cx="10" cy="10" r="5" fill="#B4F8FE" />
+                                </svg>
+                                <p class="legendText">
+                                    5-6 titles
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="historyRight">
+                        <div class="map_history" id="map_history">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="section content slide" id="Success">
+            <section class="success">
+                <div class="successContent">
+                    <div class="successLeft">
+                        <h1 class="successTitle">Team with the most titles since 1981</h1>
+                        <p class="successText">
+                            The five teams that have won the title the most since 1981 are shown in the bar chart on the right. Real Madrid leads the race with 6 titles followed by AC Milan with five.
+                        </p>
+                    </div>
+                    <div class="successRight">  
+                        <div class="successChart" id="success_barChart"></div>
+                    </div>     
+            </section>
+        </div>  
+        <div class="section content slide" id="Way of the Trophy">
+            <section class="time">
+                <div class="timeContent">
+                    <div class="timeLeft">
+                        <h1 class="timeTitle">The way of the trophy</h1>
+                        <p class="timeText">
+                            Every team which wins the Championsleague trophy has its origin in a european country. As the Teams travel back to there home country the trophy follows. So the Championsleague trophy has traveled a couple of miles since 1981. The journey of the trophy can be seen on the map diagram on the right. 
+                        </p>
+                        <div class="timeSlider" id="sliderContainer">
+                            <div class="topInput">
+                                <span class="period">1982</span>
+                                <input class="timeSlide" id="timeSlide" type="range" min="1982" max="2021" value="0" step="1"><br>
+                                <span class="period">2021</span>
+                            </div>
+                            <input class="value" id="value" type="number" min="1982" max="2021" value="1982" step="1"></input>
+                        </div>
+                        <div class="from_to">
+                            <div class="fromG">
+                                <p class="from"> From:</p>
+                                <p class="fromEntry" id="from">test</p>
+                            </div>
+                            <div class="toG">
+                                <p class="to"> To:</p>
+                                <p class="toEntry" id="hans">test</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeRight">
+                        <div class="timeChart" id="map_time"></div>
+                    </div>     
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript">
+        new fullpage('#fullpage', {
+            navigation: true, 
+            navigationTooltips: ['Home', 'Distribution', 'Success', 'Way of the Trophy']
+        });
+    </script>
+    <script src='src/historyMap.js'></script>
+    <script src='src/success.js'></script>
+    <script src='src/timeMap.js'></script>  
+</body>
+</html>
